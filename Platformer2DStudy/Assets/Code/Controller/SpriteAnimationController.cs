@@ -48,7 +48,7 @@ namespace Code.Controller
             _config = config;
         }
 
-        public void StartAnimation(SpriteRenderer spriteRenderer, AnimState track, bool loop, float speed) //it's start in video
+        public void StartAnimation(SpriteRenderer spriteRenderer, AnimState track, bool loop, float speed)
         {
             if (_activeAnimations.TryGetValue(spriteRenderer, out var animation))
             {
