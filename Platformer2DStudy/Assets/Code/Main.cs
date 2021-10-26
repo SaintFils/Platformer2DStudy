@@ -14,9 +14,12 @@ namespace Code
 
         private SpriteAnimationController _playerAnimator;
 
+        private Player _playerController;
+
         private void Awake()
         {
             playerConfig = Resources.Load<SpriteAnimationConfig>("PlayerAnimConfig");
+
             if (playerConfig)
             {
                 _playerAnimator = new SpriteAnimationController(playerConfig);
@@ -26,11 +29,14 @@ namespace Code
             {
                 _playerAnimator.StartAnimation(playerView.spriteRenderer, AnimState.Run, true, animationSpeed);
             }
+
+            _playerController = new Player(playerView, _playerAnimator);
         }
 
         private void Update()
         {
             _playerAnimator.Tick();
+            _playerController.Tick();
         }
     }
 }
