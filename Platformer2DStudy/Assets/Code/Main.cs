@@ -35,8 +35,7 @@ namespace Code
 
         private void Update()
         {
-            _playerAnimator.Tick();
-            _playerController.Tick();
+           _playerController.Tick();
         }
     }
 }

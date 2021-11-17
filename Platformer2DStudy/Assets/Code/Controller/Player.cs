@@ -15,7 +15,7 @@ namespace Code.Controller
         private float _walkSpeed = 10.0f;
         private float _animationSpeed = 8.0f;
         private float _movingThreshold = 0.1f;
-        private float _jumpForce = 150.0f;
+        private float _jumpForce = 5.0f;
         private float _jumpThreshold = 1.0f;
         private float _groundLevel = 0.5f; //временное решение для изучения, будет заменено
         private float _xVelocity = 0f;
@@ -83,23 +83,23 @@ namespace Code.Controller
                 if (Mathf.Abs(_yVelocity) > _jumpThreshold)
                 {
                     _spriteAnimator.StartAnimation(_view.spriteRenderer, AnimState.Jump, true, _animationSpeed);
-                    _yVelocity += Constants.Constants.FloatConstants.G * Time.deltaTime;
-                    _view.transform.position += Vector3.up /*_vectorUp*/ * (Time.deltaTime * _yVelocity);
                 }
+                _yVelocity += Constants.Constants.FloatConstants.G * Time.deltaTime;
+                _view.transform.position += Vector3.up /*_vectorUp*/ * (Time.deltaTime * _yVelocity);
             }
         }
 
         public void Move()
         {
-            _view.transform.position += _vectorRight * (Time.deltaTime * _walkSpeed * (_xAxisInput < 0 ? -1 : 1));
+           // _view.transform.position += _vectorRight * (Time.deltaTime * _walkSpeed * (_xAxisInput < 0 ? -1 : 1));
             if (_xAxisInput < 0)
             {
-                //_view.transform.position += _vectorLeft * (Time.deltaTime * _walkSpeed);
+                _view.transform.position += _vectorLeft * (Time.deltaTime * _walkSpeed);
                 _view.transform.localScale = _leftScale;
             }
             else
             {
-                //_view.transform.position += _vectorRight * (Time.deltaTime * _walkSpeed);
+                _view.transform.position += _vectorRight * (Time.deltaTime * _walkSpeed);
                 _view.transform.localScale = _rightScale;
             }
         }

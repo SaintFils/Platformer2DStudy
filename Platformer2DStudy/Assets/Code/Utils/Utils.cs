@@ -2,7 +2,7 @@
 
 namespace Code.Utils
 {
-    public static class Utils //todo разобраться в необходимости
+    public static class Utils
     {
         public static Vector3 Change(this Vector3 org, object x = null, object y = null, object z = null)
         {
