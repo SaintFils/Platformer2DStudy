@@ -13,7 +13,7 @@ namespace Code
         [SerializeField] private LevelObjectView playerView;
 
         private SpriteAnimationController _playerAnimator;
-
+        private CameraController _cameraController;
         private Player _playerController;
 
         private void Awake()
@@ -31,11 +31,15 @@ namespace Code
             }
 
             _playerController = new Player(playerView, _playerAnimator);
+
+            _cameraController = new CameraController(playerView.transform, Camera.main.transform);
         }
 
         private void Update()
         {
            _playerController.Tick();
+           _cameraController.Tick();
         }
+
     }
 }

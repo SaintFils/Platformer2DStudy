@@ -5,6 +5,7 @@
         public struct FloatConstants
         {
             public const float G = -9.8f;
+            public const float CollisionThreshold = 0.6f;
         }
 
         public struct StringConstants
