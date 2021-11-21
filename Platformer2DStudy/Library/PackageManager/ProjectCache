@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637726574314217131
+      ticks: 637728419237037838
     m_Hash: 1788185840
   m_LockFileStatus:
     m_FilePath: C:/Users/Oleg/UnityStudy/Platformer2d/Platformer2DStudy/Platformer2DStudy/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637726574314217131
+      ticks: 637728419237037838
     m_Hash: 848746553
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
